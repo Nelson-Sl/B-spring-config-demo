@@ -1,15 +1,23 @@
 package com.thoughtworks.capability.gtb.demospringconfig;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.boot.autoconfigure.ldap.embedded.EmbeddedLdapProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.util.List;
 import java.util.Map;
 
 @ConfigurationProperties("mail")
+//@Validated
 public class MailConfiguration {
 
+//    @Length(min=16, max=64)
     private String hostname;
+//    @Min(9001)
+//    @Max(9999)
     private int port;
     private String from;
     private List<String> defaultRecipients;
